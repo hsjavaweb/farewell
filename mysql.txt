@@ -1,12 +1,12 @@
 mysql> CREATE TABLE stu_tb(
-    -> stu_num INT(10) KEY,//INT¿ÉÒÔ¸ù¾ÝÇé¿ö¶¨ÒåÎªÓÐ·ûºÅºÍÎÞ·ûºÅµÄ£¬UNSIGNED ÎÞ·ûºÅ
+    -> stu_num INT(10) KEY,#INTå¯ä»¥æ ¹æ®æƒ…å†µå®šä¹‰ä¸ºæœ‰ç¬¦å·å’Œæ— ç¬¦å·çš„ï¼ŒUNSIGNED æ— ç¬¦å·
     -> stu_name CHAR(10),
     -> stu_sex CHAR(5),
     -> stu_age INT(2)
-    -> );       //´´½¨ÁËÊý¾Ý±í£¬½«stu_num¶¨ÒåÎªÖ÷¼ü£»
+    -> );       #åˆ›å»ºäº†æ•°æ®è¡¨ï¼Œå°†stu_numå®šä¹‰ä¸ºä¸»é”®ï¼›
 Query OK, 0 rows affected (0.04 sec)
 
-mysql> SHOW COLUMNS FROM stu_tb;//²é¿´Êý¾Ý±í½á¹¹
+mysql> SHOW COLUMNS FROM stu_tb;#æŸ¥çœ‹æ•°æ®è¡¨ç»“æž„
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
 +----------+----------+------+-----+---------+-------+
@@ -17,7 +17,7 @@ mysql> SHOW COLUMNS FROM stu_tb;//²é¿´Êý¾Ý±í½á¹¹
 +----------+----------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
 
-mysql> INSERT stu_tb VALUES(2017001,'TOM','m',21);//²åÈëÔªËØ INSERT INTO tb_name(col_name,...) VALUES (val,...);
+mysql> INSERT stu_tb VALUES(2017001,'TOM','m',21);#æ’å…¥å…ƒç´  INSERT INTO tb_name(col_name,...) VALUES (val,...);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> INSERT stu_tb VALUES(2017002,'Jeery','m',20);
@@ -29,7 +29,7 @@ Query OK, 1 row affected (0.01 sec)
 mysql> INSERT stu_tb VALUES(2017004,'Dylan','w',25);
 Query OK, 1 row affected (0.00 sec)
 
-mysql> SELECT * FROM stu_tb;//²éÑ¯Êý¾Ý±í
+mysql> SELECT * FROM stu_tb;#æŸ¥è¯¢æ•°æ®è¡¨
 +---------+----------+---------+---------+
 | stu_num | stu_name | stu_sex | stu_age |
 +---------+----------+---------+---------+
@@ -41,7 +41,7 @@ mysql> SELECT * FROM stu_tb;//²éÑ¯Êý¾Ý±í
 4 rows in set (0.00 sec)
 
 
-mysql> UPDATE stu_tb SET stu_sex='m' WHERE stu_num=2017004;//ÐÞ¸Ä UPDATE¡¡tab_name SET col_name=val WHERE ·¶Î§  
+mysql> UPDATE stu_tb SET stu_sex='m' WHERE stu_num=2017004;#ä¿®æ”¹ UPDATEã€€tab_name SET col_name=val WHERE èŒƒå›´  
 Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -61,7 +61,7 @@ mysql> SELECT * FROM stu_tb;
 +---------+----------+---------+---------+
 4 rows in set (0.00 sec)
 
-mysql> DELETE FROM stu_tb WHERE stu_num=2017004;//É¾³ý DELETE FROM tab_name WHERE ·¶Î§
+mysql> DELETE FROM stu_tb WHERE stu_num=2017004;#åˆ é™¤ DELETE FROM tab_name WHERE èŒƒå›´
 Query OK, 1 row affected (0.00 sec)
 
 mysql> SELECT * FROM stu_tb;
