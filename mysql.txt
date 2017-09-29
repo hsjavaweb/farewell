@@ -1,0 +1,75 @@
+mysql> CREATE TABLE stu_tb(
+    -> stu_num INT(10) KEY,//INT可以根据情况定义为有符号和无符号的，UNSIGNED 无符号
+    -> stu_name CHAR(10),
+    -> stu_sex CHAR(5),
+    -> stu_age INT(2)
+    -> );       //创建了数据表，将stu_num定义为主键；
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> SHOW COLUMNS FROM stu_tb;//查看数据表结构
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| stu_num  | int(10)  | NO   | PRI | NULL    |       |
+| stu_name | char(10) | YES  |     | NULL    |       |
+| stu_sex  | char(5)  | YES  |     | NULL    |       |
+| stu_age  | int(2)   | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT stu_tb VALUES(2017001,'TOM','m',21);//插入元素 INSERT INTO tb_name(col_name,...) VALUES (val,...);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT stu_tb VALUES(2017002,'Jeery','m',20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT stu_tb VALUES(2017003,'Rose','w',19);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT stu_tb VALUES(2017004,'Dylan','w',25);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM stu_tb;//查询数据表
++---------+----------+---------+---------+
+| stu_num | stu_name | stu_sex | stu_age |
++---------+----------+---------+---------+
+| 2017001 | TOM      | m       |      21 |
+| 2017002 | Jeery    | m       |      20 |
+| 2017003 | Rose     | w       |      19 |
+| 2017004 | Dylan    | w       |      25 |
++---------+----------+---------+---------+
+4 rows in set (0.00 sec)
+
+
+mysql> UPDATE stu_tb SET stu_sex='m' WHERE stu_num=2017004;//修改 UPDATE　tab_name SET col_name=val WHERE 范围  
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+mysql> UPDATE stu_tb SET stu_age='18' WHERE stu_name='TOM';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM stu_tb;
++---------+----------+---------+---------+
+| stu_num | stu_name | stu_sex | stu_age |
++---------+----------+---------+---------+
+| 2017001 | TOM      | m       |      18 |
+| 2017002 | Jeery    | m       |      20 |
+| 2017003 | Rose     | w       |      19 |
+| 2017004 | Dylan    | m       |      25 |
++---------+----------+---------+---------+
+4 rows in set (0.00 sec)
+
+mysql> DELETE FROM stu_tb WHERE stu_num=2017004;//删除 DELETE FROM tab_name WHERE 范围
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM stu_tb;
++---------+----------+---------+---------+
+| stu_num | stu_name | stu_sex | stu_age |
++---------+----------+---------+---------+
+| 2017001 | TOM      | m       |      18 |
+| 2017002 | Jeery    | m       |      20 |
+| 2017003 | Rose     | w       |      19 |
++---------+----------+---------+---------+
+3 rows in set (0.00 sec)
